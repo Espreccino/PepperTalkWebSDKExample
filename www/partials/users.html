@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-10">
+    <ul>
+      <li class="chat-user" ng-repeat="user in userCtrl.users">
+        <p> 
+            Chat with <a ng-click="userCtrl.chat(user.id)">{{user.name}}</a>  
+            <span class="badge" ng-if="user.count > 0">{{ user.count }}</span>
+        </p> 
+      </li>
+    </ul>
+  </div>
+</div>

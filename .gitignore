@@ -1,0 +1,6 @@
+.*.swp
+.stackmob
+.env
+node_modules/
+bower_components/
+**/js/
