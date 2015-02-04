@@ -1,0 +1,23 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;      
+}
+
+.navbar-brand img {
+  max-height: 30px;
+}
+
+.page-body {
+  padding-top: 50px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 100;
+}
