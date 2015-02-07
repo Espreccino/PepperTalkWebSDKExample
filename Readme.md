@@ -15,11 +15,4 @@ This is a sample app to demonstrate the JS SDK for Pepper Talk. It contains both
 * grunt server
 * Access the app at http://localhost:8989/app/
 
-## Walk through
-### Server side
-#### SSO implementation
-
-### Client side
-#### Auth callback
-#### Events generated
-#### API 
+Please refer to the accompanying [detailed documentation](http://espreccino.github.io/PepperTalkWebSDKExample/)
