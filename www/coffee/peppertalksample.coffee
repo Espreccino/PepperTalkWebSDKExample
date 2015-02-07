@@ -53,8 +53,8 @@ app.controller('userController', ['loginService', '$rootScope', '$scope', '$stat
         }
     )
     @chat = (user) ->
-      return PepperKitSDK.showParticipantsForTopic('NoTopic', 'No Topic') if loginService.userName is user
-      return PepperKitSDK.chatWithParticipant(user, 'NoTopic', 'No Topic')
+      return PepperTalk.showParticipantsForTopic('NoTopic', 'No Topic') if loginService.userName is user
+      return PepperTalk.chatWithParticipant(user, 'NoTopic', 'No Topic')
     #
     return
 ])
@@ -79,11 +79,11 @@ app.config(($stateProvider, $urlRouterProvider) ->
 #
 app.run(($rootScope, $state, $stateParams, loginService) ->
   $rootScope.$on('login_success', ->
-    PepperKitSDK.onAuthRequired = (callback) ->
+    PepperTalk.onAuthRequired = (callback) ->
       loginService.getPepperKitSSO(callback)
       return
-    PepperKitSDK.init()
-    $(PepperKitSDK).on('incoming_message', (event, data) ->
+    PepperTalk.init()
+    $(PepperTalk).on('incoming_message', (event, data) ->
       $rootScope.$evalAsync(->
         $rootScope.$broadcast('incoming_message', data)
       )
