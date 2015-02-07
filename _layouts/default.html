@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/toc.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>    
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +32,7 @@
     </nav>
     <div class="container page-body">
       <div class="col-xs-12 page-content">
-        {{ content }}
+        {{ content | toc_generate }}
       </div>
       <div class="row footer">
           © 2015 <a href="http://espreccino.com/">Espreccino Technologies LLP</a>
