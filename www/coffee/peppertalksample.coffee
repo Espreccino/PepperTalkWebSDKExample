@@ -9,8 +9,8 @@ app.service('loginService', ['$http', '$rootScope', '$state',
       @userName = userName
       callback(null, userName)
     #
-    @getPepperKitSSO = (callback) ->
-      $http.get('/api/v1/pepperkit_sso', {params: {email: loginService.userName}}).
+    @getPepperTalkSSO = (callback) ->
+      $http.get('/api/v1/peppertalk_sso', {params: {email: loginService.userName}}).
         success((data, status) ->
           callback(null, data, status)
           return
@@ -80,7 +80,7 @@ app.config(($stateProvider, $urlRouterProvider) ->
 app.run(($rootScope, $state, $stateParams, loginService) ->
   $rootScope.$on('login_success', ->
     PepperTalk.onAuthRequired = (callback) ->
-      loginService.getPepperKitSSO(callback)
+      loginService.getPepperTalkSSO(callback)
       return
     PepperTalk.init()
     $(PepperTalk).on('incoming_message', (event, data) ->

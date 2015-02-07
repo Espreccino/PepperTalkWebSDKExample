@@ -16,18 +16,18 @@ app.get('/api/v1/user', (req, res, next) ->
 )
 #
 #
-# SSO redirect to PepperKit
+# SSO redirect to PepperTalk
 #
-pepperKitClientId = process.env.PEPPERTALK_CLIENT_ID 
-pepperKitSecret = process.env.PEPPERTALK_SECRET 
-app.get('/api/v1/pepperkit_sso', (req, res, next) ->
+pepperTalkClientId = process.env.PEPPERTALK_CLIENT_ID 
+pepperTalkSecret = process.env.PEPPERTALK_SECRET 
+app.get('/api/v1/peppertalk_sso', (req, res, next) ->
   shasum = crypto.createHash('sha1')
   timestamp = Date.now()
-  shasum.update(pepperKitClientId + ":" + pepperKitSecret + ":" + timestamp + ":" + req.query.email)
+  shasum.update(pepperTalkClientId + ":" + pepperTalkSecret + ":" + timestamp + ":" + req.query.email)
   sso_token = shasum.digest('hex')
   return res.status(200).json({
     grant_type: 'sso'
-    client_id: pepperKitClientId
+    client_id: pepperTalkClientId
     timestamp: timestamp
     username: req.query.email
     sso_token: sso_token
