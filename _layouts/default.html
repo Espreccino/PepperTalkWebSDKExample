@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/toc.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/syntax.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>    
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
     </nav>
     <div class="container page-body">
       <div class="col-xs-12 page-content">
-        {{ content | toc_generate }}
+        {{ content }}
       </div>
       <div class="row footer">
           © 2015 <a href="http://espreccino.com/">Espreccino Technologies LLP</a>
@@ -42,5 +42,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+      return $("h2, h3, h4, h5, h6").each(function(i, el) {
+        var $el, icon, id;
+        $el = $(el);
+        id = $el.attr('id');
+        icon = '<i class="fa fa-link"></i>';
+        if (id) {
+          return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
+        }
+      });
+    });
+    </script>
   </body>
 </html>

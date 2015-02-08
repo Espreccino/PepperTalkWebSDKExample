@@ -1,3 +1,4 @@
-markdown: rdiscount
+markdown: redcarpet
 highlighter: pygments
-
+redcarpet:
+    extensions: [with_toc_data]
