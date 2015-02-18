@@ -14,6 +14,7 @@ title: Pepper Talk Sample App
 - [Quick Start](#quick-start)
 - [Pepper Talk](#pepper-talk)
   - [Dependencies](#dependencies)
+  - [Including the SDK](#including-the-sdk)
   - [SDK initialization](#sdk-initialization)
 - [Topic](#topic)
 - [Initiating a Chat](#initiating-a-chat)
@@ -52,8 +53,8 @@ This is a sample app to demonstrate the JS SDK for Pepper Talk. It contains both
 * grunt
 * Get the client id and client secret from [Pepper Talk console](https://console.getpeppertalk.com/)
 * Setup environment variable with client id and client secret
-  * export PEPPERTALK_CLIENT_ID = *client id*
-  * export PEPPERTALK_SECRET = *client secret*
+  * export PEPPERTALK\_CLIENT\_ID = *client id*
+  * export PEPPERTALK\_SECRET = *client secret*
 * grunt server
 * Access the app at [http://localhost:8989/app/](http://localhost:8989/app/)
 
@@ -61,7 +62,14 @@ This is a sample app to demonstrate the JS SDK for Pepper Talk. It contains both
 [*Pepper Talk*](http://getpeppertalk.com/) is a messaging platform built primarily for mobiles. It provides native interfaces for iOS, Android and Web applications via SDK's to enable peer to peer chat for apps. Being mobile ready it has built in support for notifications, delivery indicators, media sharing and others out of the box. The SDK's expose a simple interface to get chat up and running with minimal effort from you the developer. We provide a full fledged chat interface which fits seamlessly into your apps, with customization options. SDK also exposes interfaces to send custom data between users. Callbacks are provided to have tight integration with your app, for incoming messages and unread message counts.
 
 ### Dependencies
-Pepper Talk Web SDK uses jQuery for some operations and to trigger [events] when some activity happens.
+Pepper Talk Web SDK uses jQuery for some operations and to trigger [events] when some activity happens. It opens up the chat window in an IFRAME and uses cross document messaging via the [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage) call. It also uses [WebSockets](https://developer.mozilla.org/en/docs/WebSockets) to communicate with the chat server. Please ensure that the browser supports these required features.
+
+### Including the SDK
+To include the SDK add the following line anytime after the jQuery library has been initialized. This adds the [*PepperTalk*](#api) object to the window object.
+
+{% highlight html %}
+<script src="https://hostedpepper.getpeppertalk.com/websdk/js/pepperkitstub.min.js"></script>
+{% endhighlight %}
 
 ### SDK initialization
 To get started sign up for Pepper Talk at the [Pepper Talk Console](https://console.getpeppertalk.com/). You can create a new app for yourself matching the app you are developing. Create or use an existing client id and secret pair for use with the platform of your choice. The JS SDK for web embeds the id and secret in a server component to generate an SSO to the Pepper Talk backend. Detailed explanation of how to generate the SSO token is described lated. The JS SDK has an *onAuthRequired* endpoint which should be provided. The implementation is expected to generate the SSO token and pass back the credentials along with the user id who is logging into the chat. 
