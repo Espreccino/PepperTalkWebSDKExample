@@ -1,5 +1,16 @@
 <div class="row">
-  <div class="col-xs-10">
+  <div class="col-xs-10 container">
+    <div class="col-xs-3">
+      <input type="text" class="form-control" ng-model="userCtrl.newUserName" name="name" placeholder="Name for User" />
+    </div>
+    <div class="col-xs-3">
+      <input type="email" class="form-control" ng-model="userCtrl.newUserEmail" name="email" placeholder="Email" />
+    </div>
+    <div class="col-xs-3">
+      <button id="btn-signup" class="btn btn-info" ng-class="{'disabled': loginCtrl.progress }" ng-click="userCtrl.addUser()"> Sign Up </button>
+    </div>
+  </div>
+  <div class="col-xs-10 user-list">
     <ul>
       <li class="chat-user" ng-repeat="user in userCtrl.users">
         <p> 

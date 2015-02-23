@@ -56,6 +56,12 @@ app.controller('userController', ['loginService', '$rootScope', '$scope', '$stat
       return PepperTalk.showParticipantsForTopic('NoTopic', 'No Topic') if loginService.userName is user
       return PepperTalk.chatWithParticipant(user, 'NoTopic', 'No Topic')
     #
+    @addUser = () ->
+      return if @newUserName.length < 1
+      return if @newUserEmail.length < 1
+      return if @users[@newUserEmail]?
+      @users[@newUserEmail] = {id: @newUserEmail, name: @newUserName, count: 0}
+      @newUserName = @newUserEmail = ''
     return
 ])
 #
