@@ -9,7 +9,7 @@ This is a sample app to demonstrate the JS SDK for Pepper Talk. It contains both
 * bower install
 * grunt
 * Get the client id and client secret from the Pepper Talk dashboard
-* Setup environment variable with client id and client secret
+* Setup the following environment variables in your shell with client id and client secret
   * PEPPERTALK_CLIENT_ID
   * PEPPERTALK_SECRET
 * grunt server
