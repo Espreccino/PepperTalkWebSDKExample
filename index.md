@@ -72,7 +72,7 @@ To include the SDK add the following line anytime after the jQuery library has b
 {% endhighlight %}
 
 ### SDK initialization
-To get started sign up for Pepper Talk at the [Pepper Talk Console](https://console.getpeppertalk.com/). You can create a new app for yourself matching the app you are developing. Create or use an existing client id and secret pair for use with the platform of your choice. The JS SDK for web embeds the id and secret in a server component to generate an SSO to the Pepper Talk backend. Detailed explanation of how to generate the SSO token is described lated. The JS SDK has an *onAuthRequired* endpoint which should be provided. The implementation is expected to generate the SSO token and pass back the credentials along with the user id who is logging into the chat. 
+To get started sign up for Pepper Talk at the [Pepper Talk Console](https://console.getpeppertalk.com/). You can create a new app for yourself matching the app you are developing. Create or use an existing client id and secret pair for use with the platform of your choice. The JS SDK for web embeds the id and secret in a server component to generate an SSO to the Pepper Talk backend. Detailed explanation of how to generate the SSO token is described later. The JS SDK has an *onAuthRequired* endpoint which should be provided. The implementation is expected to generate the SSO token and pass back the credentials along with the user id who is logging into the chat. 
 
 {% highlight javascript linenos %}
 onAuthRequired = function(callback) {
