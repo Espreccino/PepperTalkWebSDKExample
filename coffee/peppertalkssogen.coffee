@@ -5,7 +5,7 @@ argv = require("minimist")(process.argv.slice(2), {
   default: {
     host: "hostedpepper.getpeppertalk.com"
     protocol: "https"
-    file: "/tmp/pepperkit_sso.json"
+    file: "/tmp/peppertalk_sso.json"
   }
 })
 #
