@@ -10,8 +10,8 @@ This is a sample app to demonstrate the JS SDK for Pepper Talk. It contains both
 * grunt
 * Get the client id and client secret from the Pepper Talk dashboard
 * Setup the following environment variables in your shell with client id and client secret
-  * PEPPERTALK_CLIENT_ID
-  * PEPPERTALK_SECRET
+    export PEPPERTALK_CLIENT_ID = "client id from console"
+    export PEPPERTALK_SECRET = "client secret from console"
 * grunt server
 * Access the app at http://localhost:8989/app/
 
